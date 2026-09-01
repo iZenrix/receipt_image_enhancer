@@ -1,0 +1,5 @@
+OpenCV 4.12.0
+Android: staticlibs core+imgproc+imgcodecs + 3rdparty codecs (arm64-v8a, armeabi-v7a, x86_64)
+iOS: opencv2.framework thinned to arm64 + x86_64
+Host/macOS tests: Homebrew opencv@4 (4.14.x) — API-compatible for this package
+Source: https://github.com/opencv/opencv/releases/tag/4.12.0

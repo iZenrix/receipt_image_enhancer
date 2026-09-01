@@ -1,0 +1,34 @@
+name: receipt_image_enhancer
+description: >-
+  On-device receipt/nota image enhancement with OpenCV (Dart FFI).
+  Presets for natural, readable, and scanner-style output. Android and iOS.
+version: 0.1.0
+homepage: https://github.com/iZenrix/receipt_image_enhancer
+repository: https://github.com/iZenrix/receipt_image_enhancer
+issue_tracker: https://github.com/iZenrix/receipt_image_enhancer/issues
+topics:
+  - receipt
+  - image-processing
+  - opencv
+  - ffi
+  - flutter
+
+environment:
+  sdk: ^3.11.4
+
+platforms:
+  android:
+  ios:
+
+dependencies:
+  code_assets: ^1.0.0
+  ffi: ^2.1.4
+  hooks: ^1.0.0
+  logging: ^1.3.0
+  native_toolchain_c: ^0.17.4
+
+dev_dependencies:
+  ffigen: ^20.1.1
+  flutter_lints: ^6.0.0
+  image: ^4.5.4
+  test: ^1.28.0

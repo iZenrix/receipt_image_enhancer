@@ -1,0 +1,20 @@
+# OpenCV mobile binaries are too large for pub.dev / GitHub (100MB+).
+# Restore locally with: bash tool/fetch_opencv.sh
+third_party/opencv/android/**
+third_party/opencv/ios/**
+!third_party/opencv/VERSION.txt
+!third_party/opencv/CHECKSUMS.sha256
+
+# Internal / generated docs — not needed on pub.dev
+doc/receipt_image_enhancer_design.md
+doc/benchmark_results.csv
+doc/size_report.md
+doc/api/
+
+# Build / local artifacts
+native_test/build/
+benchmark/out/
+example/build/
+.dart_tool/
+.idea/
+**/.DS_Store
