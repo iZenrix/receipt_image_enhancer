@@ -96,18 +96,13 @@ class _EnhancePageState extends State<EnhancePage> {
             'warnings=${result.warnings.map((w) => w.name).join(",")}';
       });
     } on ReceiptImageEnhancerException catch (error) {
-      setState(
-        () => _status = 'Error ${error.code.name}: ${error.message}',
-      );
+      setState(() => _status = 'Error ${error.code.name}: ${error.message}');
     } finally {
       setState(() => _busy = false);
     }
   }
 
-  void _openFullscreen({
-    required String title,
-    required Uint8List bytes,
-  }) {
+  void _openFullscreen({required String title, required Uint8List bytes}) {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (_) => ImageViewerPage(title: title, bytes: bytes),
@@ -172,10 +167,8 @@ class _EnhancePageState extends State<EnhancePage> {
             _ImagePreviewCard(
               label: 'Original',
               bytes: _originalBytes!,
-              onTap: () => _openFullscreen(
-                title: 'Original',
-                bytes: _originalBytes!,
-              ),
+              onTap: () =>
+                  _openFullscreen(title: 'Original', bytes: _originalBytes!),
             ),
           ],
           if (_enhancedBytes != null) ...[
@@ -183,10 +176,8 @@ class _EnhancePageState extends State<EnhancePage> {
             _ImagePreviewCard(
               label: 'Enhanced',
               bytes: _enhancedBytes!,
-              onTap: () => _openFullscreen(
-                title: 'Enhanced',
-                bytes: _enhancedBytes!,
-              ),
+              onTap: () =>
+                  _openFullscreen(title: 'Enhanced', bytes: _enhancedBytes!),
             ),
           ],
           if (!Platform.isAndroid && !Platform.isIOS)
@@ -226,8 +217,8 @@ class _ImagePreviewCard extends StatelessWidget {
             Text(
               'Tap to enlarge',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
+                color: Theme.of(context).colorScheme.primary,
+              ),
             ),
           ],
         ),
@@ -252,11 +243,7 @@ class _ImagePreviewCard extends StatelessWidget {
 
 /// Full-screen viewer with pinch-zoom and pan.
 class ImageViewerPage extends StatelessWidget {
-  const ImageViewerPage({
-    super.key,
-    required this.title,
-    required this.bytes,
-  });
+  const ImageViewerPage({super.key, required this.title, required this.bytes});
 
   final String title;
   final Uint8List bytes;

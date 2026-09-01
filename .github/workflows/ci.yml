@@ -37,7 +37,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-      - run: bash tool/fetch_opencv.sh
+      - run: bash tool/fetch_opencv.sh android
       - run: flutter pub get
         working-directory: example
       - run: flutter build apk --debug
@@ -50,7 +50,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-      - run: bash tool/fetch_opencv.sh
+      - run: bash tool/fetch_opencv.sh ios
       - run: flutter pub get
         working-directory: example
       - run: flutter build ios --no-codesign --debug

@@ -51,31 +51,37 @@ void main() {
   }
 
   final receipt = makeReceipt(600, 800);
-  File('test/fixtures/synthetic_receipt.png')
-      .writeAsBytesSync(encodePng(receipt));
-  File('test/fixtures/synthetic_receipt.jpg')
-      .writeAsBytesSync(encodeJpg(receipt, quality: 95));
+  File(
+    'test/fixtures/synthetic_receipt.png',
+  ).writeAsBytesSync(encodePng(receipt));
+  File(
+    'test/fixtures/synthetic_receipt.jpg',
+  ).writeAsBytesSync(encodeJpg(receipt, quality: 95));
 
   final faded = adjustColor(receipt, contrast: 0.75, brightness: 1.1);
-  File('test/fixtures/faded_thermal.jpg')
-      .writeAsBytesSync(encodeJpg(faded, quality: 90));
+  File(
+    'test/fixtures/faded_thermal.jpg',
+  ).writeAsBytesSync(encodeJpg(faded, quality: 90));
 
   final blank = Image(width: 400, height: 400);
   fill(blank, color: ColorRgb8(180, 180, 180));
-  File('test/fixtures/no_document.jpg')
-      .writeAsBytesSync(encodeJpg(blank, quality: 90));
+  File(
+    'test/fixtures/no_document.jpg',
+  ).writeAsBytesSync(encodeJpg(blank, quality: 90));
 
   final tiny = copyResize(receipt, width: 64, height: 48);
   File('test/fixtures/tiny.jpg').writeAsBytesSync(encodeJpg(tiny, quality: 90));
 
   final large = copyResize(receipt, width: 3000, height: 4000);
-  File('test/fixtures/large_receipt.jpg')
-      .writeAsBytesSync(encodeJpg(large, quality: 75));
+  File(
+    'test/fixtures/large_receipt.jpg',
+  ).writeAsBytesSync(encodeJpg(large, quality: 75));
 
   final skewed = copyResize(receipt, width: 600, height: 800);
   // Keep a clear document for perspective fixtures.
-  File('test/fixtures/clear_document.jpg')
-      .writeAsBytesSync(encodeJpg(skewed, quality: 95));
+  File(
+    'test/fixtures/clear_document.jpg',
+  ).writeAsBytesSync(encodeJpg(skewed, quality: 95));
 
   // ignore: avoid_print
   print('fixtures ready');
